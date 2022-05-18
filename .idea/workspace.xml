@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3389756-0ec9-41a9-996d-9b1784b447e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/DocumentCloud/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/DocumentCloud/ServletInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/DocumentCloud/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/DocumentCloud/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/DocumentCloud/OrdinalTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
@@ -25,6 +22,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -43,10 +41,24 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Spring" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="DocumentCloud" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.DocumentCloud.Main" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -61,10 +73,85 @@
       <workItem from="1652619928400" duration="1905000" />
       <workItem from="1652622945945" duration="26000" />
       <workItem from="1652709481664" duration="4000" />
+      <workItem from="1654160157112" duration="29000" />
+      <workItem from="1652864233054" duration="997000" />
+      <workItem from="1652865788330" duration="122000" />
+      <workItem from="1652866128053" duration="253000" />
+      <workItem from="1652869281327" duration="4000" />
+      <workItem from="1652872460934" duration="162000" />
+      <workItem from="1652959068841" duration="739000" />
+      <workItem from="1652962376241" duration="313000" />
+      <workItem from="1654264730716" duration="133000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="28" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1652864529358">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state x="28" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1145.530@0.0.1145.530" timestamp="1652864529358" />
+    <state x="303" y="47" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1652864509124">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state x="303" y="47" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1145.530@0.0.1145.530" timestamp="1652864509124" />
+    <state width="1102" height="138" key="GridCell.Tab.0.bottom" timestamp="1652865241126">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state width="1102" height="138" key="GridCell.Tab.0.bottom/0.0.1145.530@0.0.1145.530" timestamp="1652865241126" />
+    <state width="1102" height="138" key="GridCell.Tab.0.center" timestamp="1652865241126">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state width="1102" height="138" key="GridCell.Tab.0.center/0.0.1145.530@0.0.1145.530" timestamp="1652865241126" />
+    <state width="1102" height="138" key="GridCell.Tab.0.left" timestamp="1652865241126">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state width="1102" height="138" key="GridCell.Tab.0.left/0.0.1145.530@0.0.1145.530" timestamp="1652865241126" />
+    <state width="1102" height="138" key="GridCell.Tab.0.right" timestamp="1652865241126">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state width="1102" height="138" key="GridCell.Tab.0.right/0.0.1145.530@0.0.1145.530" timestamp="1652865241126" />
+    <state width="1102" height="138" key="GridCell.Tab.1.bottom" timestamp="1652865241126">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state width="1102" height="138" key="GridCell.Tab.1.bottom/0.0.1145.530@0.0.1145.530" timestamp="1652865241126" />
+    <state width="1102" height="138" key="GridCell.Tab.1.center" timestamp="1652865241126">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state width="1102" height="138" key="GridCell.Tab.1.center/0.0.1145.530@0.0.1145.530" timestamp="1652865241126" />
+    <state width="1102" height="138" key="GridCell.Tab.1.left" timestamp="1652865241126">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state width="1102" height="138" key="GridCell.Tab.1.left/0.0.1145.530@0.0.1145.530" timestamp="1652865241126" />
+    <state width="1102" height="138" key="GridCell.Tab.1.right" timestamp="1652865241126">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state width="1102" height="138" key="GridCell.Tab.1.right/0.0.1145.530@0.0.1145.530" timestamp="1652865241126" />
+    <state width="1102" height="138" key="GridCell.Tab.2.bottom" timestamp="1652865241126">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state width="1102" height="138" key="GridCell.Tab.2.bottom/0.0.1145.530@0.0.1145.530" timestamp="1652865241126" />
+    <state width="1102" height="138" key="GridCell.Tab.2.center" timestamp="1652865241126">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state width="1102" height="138" key="GridCell.Tab.2.center/0.0.1145.530@0.0.1145.530" timestamp="1652865241126" />
+    <state width="1102" height="138" key="GridCell.Tab.2.left" timestamp="1652865241126">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state width="1102" height="138" key="GridCell.Tab.2.left/0.0.1145.530@0.0.1145.530" timestamp="1652865241126" />
+    <state width="1102" height="138" key="GridCell.Tab.2.right" timestamp="1652865241126">
+      <screen x="0" y="0" width="1145" height="530" />
+    </state>
+    <state width="1102" height="138" key="GridCell.Tab.2.right/0.0.1145.530@0.0.1145.530" timestamp="1652865241126" />
+    <state x="381" y="180" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1652882377942">
+      <screen x="0" y="0" width="1143" height="528" />
+    </state>
+    <state x="381" y="180" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1143.528@0.0.1143.528" timestamp="1652882377942" />
+    <state x="228" y="107" key="run.anything.popup" timestamp="1652959070368">
+      <screen x="0" y="0" width="1143" height="528" />
+    </state>
+    <state x="228" y="107" key="run.anything.popup/0.0.1143.528@0.0.1143.528" timestamp="1652959070368" />
   </component>
 </project>
