@@ -1,0 +1,38 @@
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+.upload-container {
+  .el-upload {
+    width: 100%;
+
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+
+.el-header{
+  line-height: 60px;
+  background-color: rgb(84, 92, 100);
+}
+
+
+.el-tree-node.is-current>.el-tree-node__content{
+  background-color:#f0f7ff !important
+}

@@ -1,0 +1,50 @@
+.hzq-wiki-main-width{
+    width: 987px;
+    margin: 0 auto;
+}
+.hzq-wiki-height{
+    height: calc(100vh - 60px) !important;
+}
+
+.hzq{
+
+  &-admin{
+    .header{
+      
+    }
+    .headerForm{
+      margin:20px 10px;
+    }
+    .headerForm .el-form-item{
+      margin:0px;
+    }
+    ////// -- 针对直接是表单的,如个人中心,修改密码
+    .basic{
+      padding: 30px 30px 20px 20px;
+      background: #ffffff;
+    }
+    .basic .footer{
+      text-align: center;
+    }
+  }
+  // 自定义element 抽屉样式
+  &-drawer{
+    .header{
+      margin-left: 20px;
+    }
+    .content{
+      display: flex;
+      flex-direction: column;
+    }
+    .content form{
+      flex: 1;
+      margin: 0 20px;
+    }
+    .footer{
+      display: flex;
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+    }
+  }
+}
