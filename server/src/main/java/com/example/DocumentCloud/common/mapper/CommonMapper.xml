@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.autumn.common.mapper.CommonMapper">
+    <!--结果映射map-->
+    <resultMap id="RoleResultMap" type="com.autumn.platform.model.Auth_role">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="rolename" jdbcType="VARCHAR" property="rolename" />
+        <result column="adduser" jdbcType="INTEGER" property="adduser" />
+        <result column="addtime" jdbcType="TIMESTAMP" property="addtime" />
+    </resultMap>
+
+    <!--mybatis示范 - 使用ByPage结尾实现分页-->
+    <select id="selectRoleByPage" parameterType="com.autumn.platform.model.Auth_role" resultMap="RoleResultMap">
+      SELECT * FROM  auth_role
+      <where>
+          <if test="role.rolename != null and role.rolename != ''">
+              and rolename like '%${role.rolename}%'
+          </if>
+          <if test="role.adduser != null and role.adduser != ''">
+              and adduser = #{role.adduser}
+          </if>
+          <if test="role.addtime != null and role.addtime != ''">
+              and addtime = #{role.addtime}
+          </if>
+      </where>
+    </select>
+    <!--mybatis示范 - 分页查询总数-->
+    <select id="selectAllCount" parameterType="com.autumn.platform.model.Auth_role" resultType="String" >
+        SELECT count(*) FROM  auth_role
+        <where>
+            <if test="role.rolename != null and role.rolename != ''">
+                and rolename like '%${role.rolename}%'
+            </if>
+            <if test="role.adduser != null and role.adduser != ''">
+                and adduser = #{role.adduser}
+            </if>
+            <if test="role.addtime != null and role.addtime != ''">
+                and addtime = #{role.addtime}
+            </if>
+        </where>
+    </select>
+
+    <!--mybatis示范 - 获取所有列表-->
+    <select id="selectRoleList" parameterType="com.autumn.platform.model.Auth_role" resultType="com.autumn.platform.model.AuthRoleExt" >
+      SELECT * FROM  auth_role
+        <where>
+          <if test="role.rolename != null and role.rolename != ''">
+              and rolename like '%${role.rolename}%'
+          </if>
+          <if test="role.adduser != null and role.adduser != ''">
+              and adduser = #{role.adduser}
+          </if>
+          <if test="role.addtime != null and role.addtime != ''">
+              and addtime = #{role.addtime}
+          </if>
+        </where>
+    </select>
+
+</mapper>

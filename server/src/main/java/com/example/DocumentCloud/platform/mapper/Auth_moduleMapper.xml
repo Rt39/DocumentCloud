@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.autumn.platform.mapper.Auth_moduleMapper">
+  <resultMap id="BaseResultMap" type="com.autumn.platform.model.Auth_module">
+    <id column="moduleId" jdbcType="INTEGER" property="moduleid" />
+    <result column="parentId" jdbcType="INTEGER" property="parentid" />
+    <result column="moduleName" jdbcType="VARCHAR" property="modulename" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+    <result column="ordernumber" jdbcType="INTEGER" property="ordernumber" />
+    <result column="syscode" jdbcType="INTEGER" property="syscode" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    moduleId, parentId, moduleName, path, ordernumber, syscode
+  </sql>
+  <select id="selectByExample" parameterType="com.autumn.platform.model.Auth_moduleExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from auth_module
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from auth_module
+    where moduleId = #{moduleid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from auth_module
+    where moduleId = #{moduleid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.autumn.platform.model.Auth_moduleExample">
+    delete from auth_module
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.autumn.platform.model.Auth_module">
+    insert into auth_module (moduleId, parentId, moduleName, 
+      path, ordernumber, syscode
+      )
+    values (#{moduleid,jdbcType=INTEGER}, #{parentid,jdbcType=INTEGER}, #{modulename,jdbcType=VARCHAR}, 
+      #{path,jdbcType=VARCHAR}, #{ordernumber,jdbcType=INTEGER}, #{syscode,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.autumn.platform.model.Auth_module">
+    insert into auth_module
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="moduleid != null">
+        moduleId,
+      </if>
+      <if test="parentid != null">
+        parentId,
+      </if>
+      <if test="modulename != null">
+        moduleName,
+      </if>
+      <if test="path != null">
+        path,
+      </if>
+      <if test="ordernumber != null">
+        ordernumber,
+      </if>
+      <if test="syscode != null">
+        syscode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="moduleid != null">
+        #{moduleid,jdbcType=INTEGER},
+      </if>
+      <if test="parentid != null">
+        #{parentid,jdbcType=INTEGER},
+      </if>
+      <if test="modulename != null">
+        #{modulename,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="ordernumber != null">
+        #{ordernumber,jdbcType=INTEGER},
+      </if>
+      <if test="syscode != null">
+        #{syscode,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.autumn.platform.model.Auth_moduleExample" resultType="java.lang.Long">
+    select count(*) from auth_module
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update auth_module
+    <set>
+      <if test="record.moduleid != null">
+        moduleId = #{record.moduleid,jdbcType=INTEGER},
+      </if>
+      <if test="record.parentid != null">
+        parentId = #{record.parentid,jdbcType=INTEGER},
+      </if>
+      <if test="record.modulename != null">
+        moduleName = #{record.modulename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.path != null">
+        path = #{record.path,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ordernumber != null">
+        ordernumber = #{record.ordernumber,jdbcType=INTEGER},
+      </if>
+      <if test="record.syscode != null">
+        syscode = #{record.syscode,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update auth_module
+    set moduleId = #{record.moduleid,jdbcType=INTEGER},
+      parentId = #{record.parentid,jdbcType=INTEGER},
+      moduleName = #{record.modulename,jdbcType=VARCHAR},
+      path = #{record.path,jdbcType=VARCHAR},
+      ordernumber = #{record.ordernumber,jdbcType=INTEGER},
+      syscode = #{record.syscode,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.autumn.platform.model.Auth_module">
+    update auth_module
+    <set>
+      <if test="parentid != null">
+        parentId = #{parentid,jdbcType=INTEGER},
+      </if>
+      <if test="modulename != null">
+        moduleName = #{modulename,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null">
+        path = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="ordernumber != null">
+        ordernumber = #{ordernumber,jdbcType=INTEGER},
+      </if>
+      <if test="syscode != null">
+        syscode = #{syscode,jdbcType=INTEGER},
+      </if>
+    </set>
+    where moduleId = #{moduleid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.autumn.platform.model.Auth_module">
+    update auth_module
+    set parentId = #{parentid,jdbcType=INTEGER},
+      moduleName = #{modulename,jdbcType=VARCHAR},
+      path = #{path,jdbcType=VARCHAR},
+      ordernumber = #{ordernumber,jdbcType=INTEGER},
+      syscode = #{syscode,jdbcType=INTEGER}
+    where moduleId = #{moduleid,jdbcType=INTEGER}
+  </update>
+</mapper>
